@@ -42,7 +42,15 @@ var config = {
         rules: [
             //'babel-loader'
             { test: /\.(js|ts)?$/, exclude: /node_modules/, loader: ['ts-loader'] },
-            { test: /\.vue$/, loader: 'vue-loader' }
+            { test: /\.vue$/, loader: 'vue-loader' },
+            {
+                test: /\.(less|css)$/,
+                use: [
+                    "style-loader",
+                    "css-loader",
+                    "less-loader"
+                ]
+            }
         ]
     },
     resolve: {
