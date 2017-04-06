@@ -3,7 +3,7 @@ import  VueRouter from 'vue-router';
 import App from './App.vue';
 Vue.use(VueRouter);
 const router = new VueRouter({
-  mode: 'history',
+  //mode: 'history',
   routes: [
   ]
 });
