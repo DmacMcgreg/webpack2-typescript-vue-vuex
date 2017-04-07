@@ -40,9 +40,15 @@ var config = {
     },
     module: {
         rules: [
-            //'babel-loader'
-            { test: /\.(js|ts)?$/, exclude: /node_modules/, loader: ['ts-loader'] },
-            { test: /\.vue$/, loader: 'vue-loader' },
+            {
+                test: /\.ts$/,
+                exclude: /node_modules|vue\/src/,
+                loader: 'ts-loader',
+            },
+            {
+                test: /\.vue$/,
+                loader: 'vue-loader'
+            },
             {
                 test: /\.(less|css)$/,
                 use: [
@@ -54,7 +60,7 @@ var config = {
         ]
     },
     resolve: {
-        extensions: [".js",".ts",".vue"], //当requrie的模块找不到时，添加这些后缀
+        extensions: [".js", ".ts", ".vue"], //当requrie的模块找不到时，添加这些后缀
     },
     plugins: [
         new webpack.LoaderOptionsPlugin({

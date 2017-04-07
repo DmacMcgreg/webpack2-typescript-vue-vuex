@@ -10,8 +10,8 @@
               <div class="ui-row-flex ui-grid-flex box-align mb-infor">
                 <div class="ui-col ui-member-img"><img src="http://wx.qlogo.cn/mmopen/ajNVdqHZLLA3qFZxiaSxTia4eXpk73lE6GoBib73uV05WRn9e3TOYgeD3FMRojPdT04jG5bfMiclEtEiaq9UUeHxN5Q/0"></div>
                 <div class="ui-col ui-col-1 ui-grid-flex-info user-infor">
-                  <h1>七号包子铺</h1>
-                  <div><span>昨日推广</span>
+                  <h1></h1>
+                  <div><span>{{msg}}</span>
                     <!-- react-text: 13 -->(次)
                     <!-- /react-text -->
                   </div>
@@ -55,3 +55,22 @@
     </div>
   </div>
 </template>
+<script>
+    /*export default {
+        data () {
+            return {
+                modeType: "vertical",
+                modal1: false,
+                spanLeft: 5,
+                spanRight: 19,
+                logoIsDisplay: false
+            }
+        }
+    }*/
+    // import Vue from 'vue';
+    // import Component from 'vue-class-component'
+    // @Component
+    // export default class HomeController extends Vue {
+    //   msg: number = 123
+    // }
+</script> 
