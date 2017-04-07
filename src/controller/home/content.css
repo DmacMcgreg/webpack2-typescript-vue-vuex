@@ -1,0 +1,285 @@
+.view-bg{
+    background: #EEF3F6;
+}
+.mb-page{
+    margin-top: 13px;
+}
+.mb-page:first-child{
+    margin-top: 0;
+}
+.mb-page:last-child{
+    margin-bottom: 13px;
+}
+.user-infor{
+    font-size: 15px;
+}
+.user-infor h1{
+    color: #C3D0D7;
+}
+.user-infor span{
+    font-size: 17px;
+}
+.record-list h1{
+    padding: 9px 12px;
+    position: relative;
+    background: #EEF3F6;
+    color: #95A3AC;
+    font-size: 13px;
+}
+.record-title-right{
+    text-align: right;
+    position: absolute;
+    right: 10px;
+}
+.list-main li {
+    padding: 14px 12px;
+    background-color: #fff;
+    border-bottom: 1px solid #D8DFE7;
+    position:relative;
+    font-size: 15px;
+    color: #95A3AC;
+}
+.list-main li>span {
+    position:absolute;
+    right:10px;
+    color: #535C61;
+}
+.list-main li>i {
+    font-style:normal;
+    font-size: 12px;
+    color: #535C61;
+    margin-left: 10px;
+}
+.ui-member-img{
+    height: 3rem;
+    width: 3rem;
+    padding: .48rem .48rem .48rem 0;
+}
+.ui-member-img img{
+    width:100%;
+    height:100%;
+    display:block
+}
+.qr-code-img{
+    padding-top: 100px;  
+}
+.qr-code-img img{
+    width:200px;
+    height:200px;
+    display:block;
+    margin: 0 auto 70px;
+}
+.qr-press{
+    font-size: 16px;
+    color: #ccc;
+}
+.qr-pmt{
+    font-size: 15px;
+    color: #535C61;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.qr-else{
+    font-size: 20px;
+    color: #535C61;
+    padding: 15px;
+}
+.qr-link{
+    margin: 10px 20px;
+    background: #ffffff;
+}
+.qr-link span{
+    display: block;
+    font-size: 14px;
+    color: #1B88EE;
+    padding: 15px;
+}
+
+/*我的成员*/
+.mb-infor{
+    background: #33475C;
+    color: #ffffff;
+}
+.mb-infor img{
+    width: 30px;
+    margin: 9px;
+}
+.ui-member-img img{
+    width: 50px;
+    height: 50px;
+    margin-top: 0px;
+    border-radius: 25px;
+}
+.arrowlink{
+    position: relative;
+}
+.arrowlink:before {
+    content: " ";
+    position: absolute;
+    right: 50%;
+    margin-right: -45px;
+    top: 50%;
+    margin-top: -6px;
+    border: solid #c7c7c7;
+    border-width: 2px 0 0 2px;
+    width: 12px;
+    height: 12px;
+    -webkit-transform: rotate(135deg);
+}
+
+/*个人中心*/
+.border-b{
+    border-bottom: 1px solid #D8DFE7;
+}
+.pn-bd{
+    text-align: center;
+    display: -webkit-box;
+    -webkit-box-sizing: border-box;
+    -webkit-box-align: center;
+    -webkit-box-orient: vertical;
+    padding-top: 10px;
+    padding-bottom: 22px;
+}
+.pn-num{
+    width: 157px;
+    height: 157px;
+    line-height: 157px;
+    border: 1px solid #B8DDFF;
+    font-size: 48px;
+    margin: auto;
+    border-radius: 80px;
+    color: #1B88EE;
+    position: relative;
+}
+
+/*点*/
+.pn-pot{
+    width: 10px;
+    height: 10px;
+    background: #b8ddff;
+    border-radius: 10px;
+    position: absolute;
+    right: 50%;
+    margin-right: -5px;
+    top: -5px;
+}
+.pn-pot1{
+    width: 10px;
+    height: 10px;
+    background: #b8ddff;
+    border-radius: 10px;
+    position: absolute;
+    right: 50%;
+    margin-right: -5px;
+    top: 50%;
+    margin-top: -5px;
+}
+.pn-tomanth{
+    padding-left: 4px;
+}
+.pn-munber{
+    background: #fff;
+    padding: 12px;
+    font-size: 17px;
+    color: #535C61;
+    -webkit-box-align: center;
+}
+.pn-munber span{
+    font-size: 11px;
+    color: #535C61;
+}
+.pn-tot{
+    font-size: 20px;
+    color: #FF7029;
+}
+.pn-tot span{
+    display: block;
+    font-size: 12px;
+    color: #95A3AC;
+}
+.pn-list{
+    margin-top: 13px;
+    border-top: 1px solid #D8DFE7;
+}
+
+/*推广记录*/
+.ui-grid-flex-list{
+    padding: 12px;
+    font-size: 13px;
+}
+.light-gray {
+    color: #95A3AC;
+}
+.dark-grey {
+    color: #535C61;
+}
+.p-record-top{
+    padding: 6px;
+    font-size: 12px;
+}
+.ui-precord:last-child{
+    margin-bottom: 13px;
+}
+
+
+/*加载更多按钮*/
+.ui-footer-height{
+    height: 63px;
+}
+.ui-footer-btn{
+    padding: 10px 20px;
+}
+.ui-footer-btn button{
+    padding: 8px;
+    border-radius: 5px;
+    color: #535C61;
+    font-size: 17px;
+}
+
+/*一键关注*/
+.att{
+    text-align: center;
+}
+.att >img{
+    width: 250px;
+    margin-top: 35px;
+}
+.att-header{
+    font-size: 20px;
+    color: #FF7029;
+    margin-top: 70px;
+}
+.att-header >img{
+    width: 80px;
+    padding-left: 10px;
+    padding-right: 10px;
+    vertical-align: -20px;
+}
+.att-footer{
+    font-size: 20px;
+    color: #95A3AC;
+    margin-top: 35px;
+}
+
+/*下载APP*/
+.dld{
+    text-align: center;
+}
+.dld >img{
+    width: 80px;
+    margin-top: 36px;
+}
+.dld-test{
+    font-size: 24px;
+    color: #535C61;
+    margin-top: 29px;
+    margin-bottom: 28px;
+}
+.dld-txt{
+    font-size: 15px;
+    color: #9FB6C6;
+    margin-bottom: 31px;
+}
+.m-t-xl{
+    margin-top: 90px;
+}
