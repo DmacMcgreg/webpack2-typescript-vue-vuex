@@ -41,9 +41,12 @@ var config = {
     module: {
         rules: [
             {
-                test: /\.ts$/,
-                exclude: /node_modules|vue\/src/,
+                test: /\.(js|tsx|ts)?$/,
+                exclude: /node_modules/,
                 loader: 'ts-loader',
+                options: {
+                    transpileOnly: true
+                }
             },
             {
                 test: /\.vue$/,

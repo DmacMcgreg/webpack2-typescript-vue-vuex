@@ -55,7 +55,7 @@
     </div>
   </div>
 </template>
-<script>
+<script lang = "ts">
     /*export default {
         data () {
             return {
@@ -67,10 +67,10 @@
             }
         }
     }*/
-    // import Vue from 'vue';
-    // import Component from 'vue-class-component'
-    // @Component
-    // export default class HomeController extends Vue {
-    //   msg: number = 123
-    // }
+    import Vue from 'vue';
+    import Component from 'vue-class-component'
+    @Component
+    export default class HomeController extends Vue {
+      msg: number = 123456
+    }
 </script> 
