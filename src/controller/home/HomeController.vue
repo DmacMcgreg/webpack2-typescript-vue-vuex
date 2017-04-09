@@ -26,9 +26,11 @@
                 </div>
               </div>
             </div>
+            <TextDiv ref="profile"></TextDiv>
             <div class="pn-list">
-              <LinkLi v-for="item in menuLists">{{item.info}}</LinkLi>
+              <LinkLi :key="item.id" v-for="item in menuLists" :message="item.router" @greet="incrementTotal">{{item.info}}</LinkLi>
             </div>
+            
             <div>
               <button display="block" type="danger" class="ui-btn ui-btn-danger ui-btn-block">退出</button>
             </div>
@@ -43,13 +45,15 @@
   import Vue from 'vue';
   import Component from 'vue-class-component';
   import LinkLi from './LinkLi.vue';
+  import TextDiv from './TextDiv.vue';
   @Component({
       name: 'HomeController',
-      components:{LinkLi}
+      components:{LinkLi,TextDiv}
     }
   )
+ 
   export default class HomeController extends Vue {
-  
+    msg:string ="你好啊"
     menuLists = [{
         info: '推广记录',
         router: `/my/promotionRecord`
@@ -67,25 +71,39 @@
         router: `/my/members/${this.user_id}`
       }
     ]
-  
+    
+    incrementTotal(){
+      console.log('子组件触发调用')
+    }
     beforeCreate() {
-      console.log('实例已经创建,msg变量还未渲染到模板')
+      //console.log('实例已经创建,msg变量还未渲染到模板')
     }
   
     created() {
-      console.log('实例已经创建,msg变量还未渲染到模板');
+      //console.log('实例已经创建,msg变量还未渲染到模板');
     }
     // lifecycle hook
     mounted() {
-      console.log('已经挂载到模板上:msg变量渲染到模板');
+      /*setTimeout(()=>{
+        console.log('触发')
+        this.msg ='Fuck11'
+      },3000)*/
+      //console.log(this.$children)
+      //console.log(this.$data.msg)
+      /**
+        通过refs 直接指向子组件
+       */
+      //this.$refs.profile.greet()
+      //console.log(this.$children)
+      //console.log('已经挂载到模板上:msg变量渲染到模板');
     }
   
     updated() {
-      console.log('实例更新啦')
+     // console.log('实例更新啦')
     }
   
     destroyed() {
-      console.log('销毁啦')
+     // console.log('销毁啦')
     }
   
     // computed
