@@ -95,7 +95,7 @@
     // lifecycle hook
     mounted() {
       this.greet()
-      console.log(this.$store.state.HomeMutation)
+      console.log(this.$store.state.HomeMutation.count)
       //this.$store.dispatch('checkout')
       //console.log(this.$store)
       /*setTimeout(()=>{
@@ -122,8 +122,9 @@
   
     // computed
     get computedMsg() {
-      console.log('进来,进来')
-      return 'computed ' + this.$store.state.HomeMutation.checkoutStatus
+      //console.log( this.$store.getters.count)
+      //return this.$store.getters.
+      //return 'computed ' + this.$store.state.HomeMutation.checkoutStatus
     }
   
     // method
