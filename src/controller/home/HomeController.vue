@@ -28,7 +28,7 @@
             </div>
             <TextDiv ref="profile"></TextDiv>
             <div class="pn-list">
-              <LinkLi :key="item.id" v-for="item in menuLists" :message="item.router" @greet="incrementTotal">{{item.info}}</LinkLi>
+              <LinkLi :key="item.id" v-for="item in menuLists" :message="item.router" @greet="incrementTotal">{{item.info | Text}}</LinkLi>
             </div>
             
             <div>

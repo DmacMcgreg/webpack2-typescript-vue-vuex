@@ -6,10 +6,7 @@
   import Vue from 'vue';
   import Component from 'vue-class-component';
   @Component({
-    name: 'TextDiv',
-    props: {
-      onClick: function
-    }
+    name: 'TextDiv'
   })
   export default class TextDiv extends Vue {
       greet(){
