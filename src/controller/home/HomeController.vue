@@ -9,7 +9,7 @@
                 <div class="ui-col ui-member-img"><img src="http://wx.qlogo.cn/mmopen/ajNVdqHZLLA3qFZxiaSxTia4eXpk73lE6GoBib73uV05WRn9e3TOYgeD3FMRojPdT04jG5bfMiclEtEiaq9UUeHxN5Q/0"></div>
                 <div class="ui-col ui-col-1 ui-grid-flex-info user-infor">
                   <h1></h1>
-                  <div><span>{{msg}}</span> (次)
+                  <div><span>{{ msg }}/{{computedMsg}}</span> (次)
                   </div>
                 </div>
               </div>
@@ -30,7 +30,7 @@
             <div class="pn-list">
               <LinkLi :key="item.id" v-for="item in menuLists" :message="item.router" @greet="incrementTotal">{{item.info | text}}</LinkLi>
             </div>
-            
+  
             <div>
               <button display="block" type="danger" class="ui-btn ui-btn-danger ui-btn-block">退出</button>
             </div>
@@ -43,17 +43,27 @@
 
 <script lang = "ts">
   import Vue from 'vue';
+  import {
+    mapGetters
+  } from 'vuex'
   import Component from 'vue-class-component';
   import LinkLi from './LinkLi.vue';
   import TextDiv from './TextDiv.vue';
   @Component({
-      name: 'HomeController',
-      components:{LinkLi,TextDiv}
+    name: 'HomeController',
+    components: {
+      LinkLi,
+      TextDiv
     }
-  )
- 
+  })
+  
   export default class HomeController extends Vue {
-    msg:string ="你好啊"
+    
+     /*computed: {
+      
+    }*/
+  
+    msg: number = 123
     menuLists = [{
         info: '推广记录',
         router: `/my/promotionRecord`
@@ -71,19 +81,23 @@
         router: `/my/members/${this.user_id}`
       }
     ]
-    
-    incrementTotal(){
+  
+    incrementTotal() {
       console.log('子组件触发调用')
     }
     beforeCreate() {
-      //console.log('实例已经创建,msg变量还未渲染到模板')
+      console.log('实例已经创建,msg变量还未渲染到模板')
     }
   
     created() {
-      //console.log('实例已经创建,msg变量还未渲染到模板');
+      console.log('实例已经创建,msg变量还未渲染到模板');
     }
     // lifecycle hook
     mounted() {
+      this.greet()
+      console.log(this.$store.state.HomeMutation)
+      //this.$store.dispatch('checkout')
+      //console.log(this.$store)
       /*setTimeout(()=>{
         console.log('触发')
         this.msg ='Fuck11'
@@ -95,25 +109,26 @@
        */
       //this.$refs.profile.greet()
       //console.log(this.$children)
-      //console.log('已经挂载到模板上:msg变量渲染到模板');
+      console.log('已经挂载到模板上:msg变量渲染到模板');
     }
   
     updated() {
-     // console.log('实例更新啦')
+       console.log('实例更新啦')
     }
   
     destroyed() {
-     // console.log('销毁啦')
+       console.log('销毁啦')
     }
   
     // computed
     get computedMsg() {
-      return 'computed ' + this.msg
+      console.log('进来,进来')
+      return 'computed ' + this.$store.state.HomeMutation.checkoutStatus
     }
   
     // method
     greet() {
-      alert('greeting: ' + this.msg)
+      //alert('greeting: ' + this.msg)
     }
   }
 </script>
