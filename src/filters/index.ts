@@ -1,7 +1,4 @@
-/**
- * 
- * @param value 过滤全局文本
- */
-export let Text = (value) => {
-    return `${value}aaa`
+import {text} from './global/text';
+export {
+    text
 }
