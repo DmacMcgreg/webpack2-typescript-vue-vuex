@@ -49,18 +49,24 @@
   import Vue from 'vue';
   import vuex from 'vuex';
   import {
-  State,
-  Getter,
-  Action,
-  Mutation,
-  namespace
-} from 'vuex-class'
-import { Component, Inject, Model, Prop, Watch } from 'vue-property-decorator'
- /* import Component from 'vue-class-component';
-  import { createDecorator } from 'vue-class-component'*/
+    State,
+    Getter,
+    Action,
+    Mutation,
+    namespace
+  } from 'vuex-class'
+  import {
+    Component,
+    Inject,
+    Model,
+    Prop,
+    Watch
+  } from 'vue-property-decorator'
+  /* import Component from 'vue-class-component';
+   import { createDecorator } from 'vue-class-component'*/
   import LinkLi from './LinkLi.vue';
   import TextDiv from './TextDiv.vue';
- 
+  
   @Component({
     name: 'HomeController',
     components: {
@@ -70,17 +76,19 @@ import { Component, Inject, Model, Prop, Watch } from 'vue-property-decorator'
   })
   
   export default class HomeController extends Vue {
- 
+  
     /*computed: {
         
       }*/
-  @Getter('HomeGetterCheckoutStatus') getterFoo
+    
+  
     msg: number = 123;
-    name:string = '小明'
+    name: string = '小明'
     menuLists = [{
       info: '推广记录',
       router: `/about`
     }]
+    @Getter('HomeGetterCheckoutStatus') getterFoo
   
     incrementTotal(router) {
   
@@ -97,6 +105,10 @@ import { Component, Inject, Model, Prop, Watch } from 'vue-property-decorator'
     }
     // lifecycle hook
     mounted() {
+      console.log(this.$store)
+      setTimeout(()=>{
+        this.msg = 'fuck'
+      },2000)
       //this.msg = 222
       //console.log(this.$store)
   
@@ -110,10 +122,10 @@ import { Component, Inject, Model, Prop, Watch } from 'vue-property-decorator'
       //console.log(this.$children)
       // console.log('已经挂载到模板上:msg变量渲染到模板');
     }
-    
-    get random () {
-    return Math.random()
-  }
+  
+    get random() {
+      return Math.random()
+    }
   
     // computed
     // get computedMsg() {
@@ -126,7 +138,7 @@ import { Component, Inject, Model, Prop, Watch } from 'vue-property-decorator'
     //   //return 'computed ' + this.$store.state.HomeMutation.checkoutStatus
     // }
   
-   
+  
   
   
     updated() {
