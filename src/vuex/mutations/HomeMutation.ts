@@ -33,15 +33,17 @@ const HomeMutation = {
         count: 1,
         checkoutStatus: '1'
     },
+    actions: {
+        checkout({ commit, state },products) {
+            console.log(products)
+            console.log(state)
+            commit(DONE_COUNT,{ id:2 })
+        }
+    },
     mutations: {
         [DONE_COUNT](state, { id }) {
             console.log('更新视图')
             state.checkoutStatus = '2';
-        }
-    },
-    actions: {
-        checkout({ commit, state }) {
-            commit(DONE_COUNT,{ id:2 })
         }
     },
     getters: {
