@@ -27,11 +27,9 @@ const DONE_COUNT = 'DONE_COUNT'
 const FETCH_ALL = 'FETCH_ALL'
 const TOGGLE_DONE = 'TOGGLE_DONE'
 const GET_PRODUCTS = 'GET_PRODUCTS'
-const HomeMutation = {
+const PromoteMutation = {
     state: {
-        added: [],
-        count: 1,
-        checkoutStatus: '1'
+        text:2
     },
     mutations: {
         [DONE_COUNT](state, { id }) {
@@ -54,4 +52,4 @@ const HomeMutation = {
 }
 }
 
-export default HomeMutation
+export default PromoteMutation
