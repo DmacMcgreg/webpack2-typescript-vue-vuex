@@ -1,5 +1,5 @@
 <template>
-  <div class="ui-row-flex ui-grid-flex ui-border-b ui-arrowlink" @click="greet(message)">
+  <div class="ui-row-flex ui-grid-flex ui-border-b ui-arrowlink" @click="greet(router)">
     <div class="ui-col ui-col-1 ui-grid-flex-info dark-grey">
       <slot>请注意，这里可以自定义(支持html)</slot>
     </div>
@@ -12,7 +12,7 @@
   @Component({
     name: 'LinkLi',
     props: {
-      message: String
+      router: String
     }
   })
   export default class LinkLi extends Vue {
@@ -46,12 +46,12 @@
       alert('我调用了子组件方法')
     }
     // method
-    greet(type) {
-      console.log(type);
+    greet(router) {
+     
       /***
         广播触发父事件
         */
-      this.$emit('greet');
+      this.$emit('greet',router);
       //alert('greeting: ' + this.msg)
     }
   }

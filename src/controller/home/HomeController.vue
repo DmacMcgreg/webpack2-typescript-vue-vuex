@@ -28,7 +28,7 @@
             </div>
             <TextDiv ref="profile"></TextDiv>
             <div class="pn-list">
-              <LinkLi :key="item.id" v-for="item in menuLists" :message="item.router" @greet="incrementTotal">{{item.info | text}}</LinkLi>
+              <LinkLi :key="item.id" v-for="item in menuLists" :router="item.router" @greet="incrementTotal">{{item.info | text}}</LinkLi>
             </div>
   
             <div>
@@ -58,32 +58,21 @@
   })
   
   export default class HomeController extends Vue {
-    
-     /*computed: {
-      
-    }*/
+  
+    /*computed: {
+        
+      }*/
   
     msg: number = 123
     menuLists = [{
-        info: '推广记录',
-        router: `/my/promotionRecord`
-      },
-      {
-        info: '推广新用户',
-        router: `/my/toPromote`
-      },
-      {
-        info: '添加成员',
-        router: `/my/addMembers`
-      },
-      {
-        info: '我的成员',
-        router: `/my/members/${this.user_id}`
-      }
-    ]
+      info: '推广记录',
+      router: `/about`
+    }]
   
-    incrementTotal() {
-      console.log('子组件触发调用')
+    incrementTotal(router) {
+  
+      this.$router.push(router)
+  
     }
     beforeCreate() {
       console.log('实例已经创建,msg变量还未渲染到模板')
@@ -94,38 +83,40 @@
     }
     // lifecycle hook
     mounted() {
-      this.greet()
-      console.log(this.$store.state.HomeMutation.count)
-      //this.$store.dispatch('checkout')
-      //console.log(this.$store)
-      /*setTimeout(()=>{
-        console.log('触发')
-        this.msg ='Fuck11'
-      },3000)*/
-      //console.log(this.$children)
-      //console.log(this.$data.msg)
+  
+      //console.log(this.$store.getters)
+      //this.greet()
+      //console.log(this.$store.state)
+      //console.log(this.$store.getters.checkoutStatus)
+        //this.$store.dispatch('checkout')
       /**
         通过refs 直接指向子组件
        */
       //this.$refs.profile.greet()
       //console.log(this.$children)
-      console.log('已经挂载到模板上:msg变量渲染到模板');
-    }
-  
-    updated() {
-       console.log('实例更新啦')
-    }
-  
-    destroyed() {
-       console.log('销毁啦')
+      // console.log('已经挂载到模板上:msg变量渲染到模板');
     }
   
     // computed
     get computedMsg() {
+      //调用方式一
+      console.log(this.$store.getters.GET_PRODUCTS)
       //console.log( this.$store.getters.count)
       //return this.$store.getters.
-      //return 'computed ' + this.$store.state.HomeMutation.checkoutStatus
+      return 'computed ' + this.$store.state.HomeMutation.checkoutStatus
     }
+  
+  
+  
+    updated() {
+      // console.log('实例更新啦')
+    }
+  
+    destroyed() {
+      // console.log('销毁啦')
+    }
+  
+  
   
     // method
     greet() {

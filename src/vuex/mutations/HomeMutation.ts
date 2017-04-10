@@ -23,29 +23,35 @@
 //   actions,
 //   mutations
 // }
-const ADD_TO_CART = 'ADD_TO_CART';
+const DONE_COUNT = 'DONE_COUNT'
+const FETCH_ALL = 'FETCH_ALL'
+const TOGGLE_DONE = 'TOGGLE_DONE'
+const GET_PRODUCTS = 'GET_PRODUCTS'
 const moduleA = {
     state: {
         added: [],
-        count: 0,
+        count: 1,
         checkoutStatus: '1'
     },
     mutations: {
-        [ADD_TO_CART](state, { id }) {
-
+        [DONE_COUNT](state, { id }) {
+            console.log('更新视图')
+            state.checkoutStatus = '2';
         }
     },
     actions: {
-        checkout({ commit, state }, products) {
-            console.log('触发到这里来')
+        checkout({ commit, state }) {
+            commit(DONE_COUNT,{ id:2 })
         }
     },
-    getters: {
-        checkoutStatus: state => state.checkoutStatus,
-        doubleCount(state) {
-            return state.count * 2
-        }
-    }
+    /*getters: {
+        HomeGetterCheckoutStatus: state => {return state.count * 2}
+    }*/
+   getters  : {
+  [GET_PRODUCTS] (state) {
+    return state.count * 2
+  }
+}
 }
 
 export default moduleA

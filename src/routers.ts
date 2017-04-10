@@ -7,6 +7,7 @@ const router = new VueRouter({
   //mode: 'history',
   routes: [
       { path: '/', component: Modeules.HomeController },
+      {path:'/about',component:Modeules.PromoteController}
   ]
 });
 
