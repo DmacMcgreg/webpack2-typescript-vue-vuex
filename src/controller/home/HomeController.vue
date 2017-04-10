@@ -9,7 +9,7 @@
                 <div class="ui-col ui-member-img"><img src="http://wx.qlogo.cn/mmopen/ajNVdqHZLLA3qFZxiaSxTia4eXpk73lE6GoBib73uV05WRn9e3TOYgeD3FMRojPdT04jG5bfMiclEtEiaq9UUeHxN5Q/0"></div>
                 <div class="ui-col ui-col-1 ui-grid-flex-info user-infor">
                   <h1></h1>
-                  <div><span>{{ msg }}/{{HomeGetterCheckoutStatus}}</span> (次)
+                  <div><span>{{ msg }}/{{computedMsg}}</span> (次)
                   </div>
                 </div>
               </div>
@@ -47,7 +47,6 @@
 
 <script lang = "ts">
   import Vue from 'vue';
-  import vuex from 'vuex';
   import {
     State,
     Getter,
@@ -61,9 +60,9 @@
     Model,
     Prop,
     Watch
-  } from 'vue-property-decorator'
-  /* import Component from 'vue-class-component';
-   import { createDecorator } from 'vue-class-component'*/
+  } from 'vue-property-decorator';
+  import Component from 'vue-class-component';
+   import { createDecorator } from 'vue-class-component'
   import LinkLi from './LinkLi.vue';
   import TextDiv from './TextDiv.vue';
   
@@ -74,14 +73,10 @@
       TextDiv
     }
   })
-  
+ 
   export default class HomeController extends Vue {
-  
-    /*computed: {
-        
-      }*/
     
-  
+  //@NoCache
     msg: number = 123;
     name: string = '小明'
     menuLists = [{
@@ -89,7 +84,7 @@
       router: `/about`
     }]
     @Getter('HomeGetterCheckoutStatus') getterFoo
-  
+    @Watch('msg') fuck
     incrementTotal(router) {
   
       this.$router.push(router)
@@ -103,9 +98,13 @@
       console.log(this.getterFoo)
       //console.log('实例已经创建,msg变量还未渲染到模板');
     }
+
+    fuck(){
+      console.log('FUCK')
+    }
     // lifecycle hook
     mounted() {
-      console.log(this.$store)
+      
       setTimeout(()=>{
         this.msg = 'fuck'
       },2000)
@@ -123,24 +122,19 @@
       // console.log('已经挂载到模板上:msg变量渲染到模板');
     }
   
-    get random() {
-      return Math.random()
-    }
+   
   
     // computed
-    // get computedMsg() {
-    //   //return this.$store.getters.HomeGetterCheckoutStatus
-    //   //console.log('aa')
-    //   //调用方式一
-    //   //console.log(this.$store.getters)
-    //   //console.log( this.$store.getters.count)
-    //   //return this.$store.getters.
-    //   //return 'computed ' + this.$store.state.HomeMutation.checkoutStatus
-    // }
-  
-  
-  
-  
+    get computedMsg() {
+      //return this.$store.getters.HomeGetterCheckoutStatus
+      //console.log('aa')
+      //调用方式一
+      //console.log(this.$store.getters)
+      //console.log( this.$store.getters.count)
+      //return this.$store.getters.
+      return 'computed ' + this.$store.state.HomeMutation.checkoutStatus
+    }
+
     updated() {
       // console.log('实例更新啦')
     }

@@ -1,20 +1,34 @@
 <template>
   <div>
-    <h1>我是推广记录</h1>
+    <p>
+      Ask a yes/no question:
+      <input v-model="question">
+    </p>
+    <p>{{ answer }}</p>
   </div>
 </template>
 
 <script lang = "ts">
   import Vue from 'vue';
-  import {
-    mapGetters
-  } from 'vuex'
-  import Component from 'vue-class-component';
-  @Component({
-    name: 'PromoteController'
-  })
   
-  export default class PromoteController extends Vue {
-  
+  export default {
+    data() {
+      return {
+        question: '',
+        answer: 'I cannot give you an answer until you ask a question!'
+      }
+    },
+    mounted(){
+      setTimeout(()=>{
+        this.question = 'fuck'
+      },2000)
+    },
+    watch: {
+      question(newQuestion) {
+        console.log(newQuestion)
+        this.answer = newQuestion
+        //this.selFilm = this.getDataById(this.filmLists, this.itemId)
+      }
+    }
   }
 </script>
