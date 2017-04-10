@@ -44,14 +44,14 @@ const HomeMutation = {
             commit(DONE_COUNT,{ id:2 })
         }
     },
-    /*getters: {
+    getters: {
         HomeGetterCheckoutStatus: state => {return state.count * 2}
-    }*/
-   getters  : {
+    }
+  /* getters  : {
   [GET_PRODUCTS] (state) {
     return state.count * 2
   }
-}
+}*/
 }
 
 export default HomeMutation

@@ -86,7 +86,7 @@
   
       //console.log(this.$store.getters)
       //this.greet()
-      //console.log(this.$store.state)
+      console.log(this.$store.state)
       //console.log(this.$store.getters.checkoutStatus)
         //this.$store.dispatch('checkout')
       /**
@@ -100,7 +100,7 @@
     // computed
     get computedMsg() {
       //调用方式一
-      console.log(this.$store.getters.GET_PRODUCTS)
+      console.log(this.$store.getters)
       //console.log( this.$store.getters.count)
       //return this.$store.getters.
       return 'computed ' + this.$store.state.HomeMutation.checkoutStatus

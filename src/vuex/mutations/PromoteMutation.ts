@@ -24,9 +24,6 @@
 //   mutations
 // }
 const DONE_COUNT = 'DONE_COUNT'
-const FETCH_ALL = 'FETCH_ALL'
-const TOGGLE_DONE = 'TOGGLE_DONE'
-const GET_PRODUCTS = 'GET_PRODUCTS'
 const PromoteMutation = {
     state: {
         text:2
@@ -42,14 +39,10 @@ const PromoteMutation = {
             commit(DONE_COUNT,{ id:2 })
         }
     },
-    /*getters: {
-        HomeGetterCheckoutStatus: state => {return state.count * 2}
-    }*/
-   getters  : {
-  [GET_PRODUCTS] (state) {
-    return state.count * 2
-  }
-}
+    getters: {
+        PromoteGetterCheckoutStatus: state => {return state.count * 2}
+    }
+   
 }
 
 export default PromoteMutation
