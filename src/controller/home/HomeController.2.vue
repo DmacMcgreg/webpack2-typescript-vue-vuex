@@ -57,18 +57,15 @@
           msg: (state) => {
             return state.HomeMutation.msg
           }
-        })
+        }
       },
       
       mounted() {
-        this.$store.dispatch('checkout')
-        //console.log(this.$http)
-        // this.$http.get('http://localhost:8000/v1/posts/2',{foo: 'bar'}).then(response => {
-        //   console.log()
-        //   // success callback
-        // }, response => {
-        //   // error callback
-        // });
+        this.$http.get('http://localhost:8000/v1/posts/2').then(response => {
+          console.log()
+          // success callback
+        }, response => {
+          // error callback
+        });
       }
-  }
 </script>

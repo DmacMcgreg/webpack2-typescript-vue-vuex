@@ -26,18 +26,20 @@
 const DONE_COUNT = 'DONE_COUNT'
 const FETCH_ALL = 'FETCH_ALL'
 const TOGGLE_DONE = 'TOGGLE_DONE'
+import {Api} from 'utilities/index';
 const GET_PRODUCTS = 'GET_PRODUCTS'
 const HomeMutation = {
     state: {
+        msg:'fuck you',
         added: [],
         count: 1,
-        checkoutStatus: '1'
+        checkoutStatus: '2'
     },
     actions: {
-        checkout({ commit, state },products) {
-            console.log(products)
-            console.log(state)
-            commit(DONE_COUNT,{ id:2 })
+        checkout({ commit, state }) {
+            console.log(Api)
+            console.log('触发,触发')
+            //commit(DONE_COUNT,{ id:2 })
         }
     },
     mutations: {
@@ -47,7 +49,7 @@ const HomeMutation = {
         }
     },
     getters: {
-        HomeGetterCheckoutStatus: state => {return state.count * 2}
+        checkoutStatus: state => state.checkoutStatus
     }
   /* getters  : {
   [GET_PRODUCTS] (state) {

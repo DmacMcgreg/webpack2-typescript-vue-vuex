@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import {App,router} from './routers';
-import store from './vuex/store/store'
+import store from './vuex/store/store';
 import * as filters from './filters/index';
 import '../www/styles/less/app.less';
 import './controller/home/content.css';
@@ -10,7 +10,6 @@ import './controller/home/content.css';
 Object.keys(filters).forEach(key => {
   Vue.filter(key, filters[key]);
 });
-
 
 new Vue({
   el: '#app',

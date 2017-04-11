@@ -26,7 +26,14 @@
 const DONE_COUNT = 'DONE_COUNT'
 const PromoteMutation = {
     state: {
-        text:2
+        // 查询条件
+        searchKey : "FUCK YOU ",
+        // 查询结果
+        searchResultList : [{
+            info:'1'
+        },{
+            info:'2'
+        }]
     },
     mutations: {
         [DONE_COUNT](state, { id }) {
@@ -36,7 +43,8 @@ const PromoteMutation = {
     },
     actions: {
         checkout({ commit, state }) {
-            commit(DONE_COUNT,{ id:2 })
+            console.log('a')
+            //commit(DONE_COUNT,{ id:2 })
         }
     },
     getters: {

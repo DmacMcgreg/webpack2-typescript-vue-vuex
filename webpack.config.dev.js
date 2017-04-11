@@ -65,6 +65,10 @@ var config = {
     },
     resolve: {
         extensions: [".js", ".ts", ".vue"], //当requrie的模块找不到时，添加这些后缀
+         //设置别名
+        alias:{
+             "utilities": path.resolve(__dirname,'src/utilities/')
+        }
     },
     plugins: [
         new webpack.LoaderOptionsPlugin({
