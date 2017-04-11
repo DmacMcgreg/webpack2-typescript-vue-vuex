@@ -99,7 +99,8 @@
       //console.log('实例已经创建,msg变量还未渲染到模板');
     }
 
-    fuck(){
+    fuck(value){
+     
       console.log('FUCK')
     }
     // lifecycle hook
@@ -107,7 +108,7 @@
       
       setTimeout(()=>{
         this.msg = 'fuck'
-      },2000)
+      },3000)
       //this.msg = 222
       //console.log(this.$store)
   
