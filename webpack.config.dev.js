@@ -25,7 +25,10 @@ var config = {
             path.resolve(__dirname, 'src/app.ts')
         ],
         common: [
-            "vue"
+            "vue",
+            "vue-router",
+            "vuex",
+            "axios"
         ]
     },
     /***
